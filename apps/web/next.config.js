@@ -3,6 +3,10 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 
+// This is causing issues with Nx 16.3.x
+const dns = require('node:dns');
+dns.setDefaultResultOrder('ipv4first');
+
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
